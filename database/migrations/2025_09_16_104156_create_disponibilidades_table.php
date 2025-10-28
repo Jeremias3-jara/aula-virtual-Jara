@@ -6,25 +6,26 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
+    public function up(): void
     {
-        Schema::create('disponibilidad', function (Blueprint $table) {
+        Schema::create('disponibilidades', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('aula_id');
+            $table->date('fecha');
+            $table->time('hora_inicio');
+            $table->time('hora_fin');
+            $table->boolean('disponible')->default(true);
             $table->timestamps();
+
+            // Relación con la tabla aulas
+            $table->foreign('aula_id')
+                ->references('id')
+                ->on('aulas')
+                ->onDelete('cascade');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('disponibilidades');
     }

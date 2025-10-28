@@ -11,13 +11,13 @@ use App\Http\Controllers\FocoController;
 use App\Http\Controllers\CortinaController;
 use App\Http\Controllers\MuebleController;
 use App\Http\Controllers\AireAcondicionadoController;
-use App\Http\Controllers\HistorialUsoAireAcondicionadoController;
+use App\Http\Controllers\HistorialAireAcondicionadoController;
 use App\Http\Controllers\HistorialFocoController;
 
-// Redirigir la raíz al listado de aulas
-Route::view('/',"welcome")->name("home");
+// Página principal
+Route::view('/', 'welcome')->name('home');
 
-// Definir recursos para cada controlador
+// Recursos principales
 Route::resource('aulas', AulaController::class);
 Route::resource('disponibilidades', DisponibilidadController::class);
 Route::resource('materias', MateriaController::class);
@@ -28,5 +28,8 @@ Route::resource('focos', FocoController::class);
 Route::resource('cortinas', CortinaController::class);
 Route::resource('muebles', MuebleController::class);
 Route::resource('aires_acondicionados', AireAcondicionadoController::class);
-Route::resource('historial_uso_aire_acondicionados', HistorialUsoAireAcondicionadoController::class);
+// routes/api.php
+
+
+Route::apiResource('historial-aires', HistorialAireAcondicionadoController::class);
 Route::resource('historial_focos', HistorialFocoController::class);

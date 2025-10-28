@@ -46,7 +46,7 @@
                         <a class="nav-link" href="{{ route('aires_acondicionados.index') }}">Aires Acondicionados</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('historial_uso_aire_acondicionados.index') }}">Historial Aire</a>
+                        <a class="nav-link" href="{{ route('historial-aires.index') }}">Historial Aire</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('historial_focos.index') }}">Historial Focos</a>
@@ -156,7 +156,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Historial de Aire Acondicionado</h5>
                         <p class="card-text">Consulta el historial de uso de aires acondicionados.</p>
-                        <a href="{{ route('historial_uso_aire_acondicionados.index') }}" class="btn btn-primary">Ir a Historial Aire</a>
+                        <a href="{{ route('historial-aires.index') }}" class="btn btn-primary">Ir a Historial Aire</a>
                     </div>
                 </div>
             </div>
